@@ -38,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText("Jai Jawan");
             }
         });
+
+        findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText("Button Clicked");
+            }
+        });
     }
 
     public void showOverlayHelp(){
