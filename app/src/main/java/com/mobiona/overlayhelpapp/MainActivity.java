@@ -30,11 +30,12 @@ public class MainActivity extends AppCompatActivity {
         mAnimation.setRepeatMode(Animation.REVERSE);
         imageView.startAnimation(mAnimation);
 */
+
         final TextView textView=findViewById(R.id.textview);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                textView.setText("Jai Hind");
+                textView.setText("Jai Jawan");
             }
         });
     }
