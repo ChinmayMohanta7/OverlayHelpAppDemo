@@ -17,15 +17,6 @@ jobs:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
 
-machine:
-    environment:
-        ANDROID_HOME: C\:\\Users\\user\\AppData\\Local\\Android\\Sdk
-
-dependencies:
-    override:
-        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,build-tools-19.1.0,android-19,extra-google-m2repository,extra-google-google_play_services,extra-android-support
-        - ANDROID_HOME: C\:\\Users\\user\\AppData\\Local\\Android\\Sdk ./gradlew dependencies
-
     steps:
       - checkout
 
