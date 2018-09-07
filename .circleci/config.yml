@@ -51,7 +51,7 @@ references:
   android_dependencies: &android_dependencies
     run:
       name: Download Android Dependencies
-      command: gradle androidDependencies
+      command: ./gradlew androidDependencies
 
 jobs:
   ## Run unit tests
