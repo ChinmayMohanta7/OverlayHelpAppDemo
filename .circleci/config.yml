@@ -53,7 +53,7 @@ references:
       name: Download Android Dependencies
       command: ./gradlew androidDependencies
 
- workflows:
+
 jobs:
   ## Run unit tests
   test_unit:
@@ -76,5 +76,12 @@ jobs:
           path: app/build/test-results/
           destination: /test-results/
 
- end
+ workflows:
+  version: 2
+  workflow:
+    jobs:
+      - test_unit
+      - test_instrumentation:
+          requires:
+            - test_unit
  
