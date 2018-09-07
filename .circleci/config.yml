@@ -53,7 +53,7 @@ references:
       name: Download Android Dependencies
       command: ./gradlew androidDependencies
 
- 
+ workflows:
 jobs:
   ## Run unit tests
   test_unit:
