@@ -56,7 +56,7 @@ references:
 
 jobs:
   ## Run unit tests
-  -test_unit:
+  test_unit:
     <<: *android_config
     steps:
       - checkout
