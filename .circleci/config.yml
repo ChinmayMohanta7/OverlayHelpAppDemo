@@ -36,10 +36,3 @@ jobs:
 
       # run tests!
       - run: gradle test
-workflows:
-  version: 2
-    jobs:
-      - build
-      - test1:
-          requires:
-            - build
