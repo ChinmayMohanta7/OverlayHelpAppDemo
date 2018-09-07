@@ -56,7 +56,7 @@ references:
 
 jobs:
   ## Run unit tests
-  test_unit:
+    test_unit:
     <<: *android_config
     steps:
       - checkout
@@ -80,6 +80,7 @@ jobs:
   version: 2
   workflow:
     jobs:
+      - test_unit
       - test_instrumentation:
           requires:
             - test_unit
