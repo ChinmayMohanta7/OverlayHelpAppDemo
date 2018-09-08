@@ -6,7 +6,8 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx4G
-
+      api_token: "58b92c81fe22e3cdf80a5b16681467616a377ed4"
+      build_secret: "4be5715b2a999108bf8bec198babd8fb01cafb0af08314d37c3b5b52bd901dc9"
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
@@ -50,4 +51,4 @@ workflows:
     - *save_gems_cache
     - run:
         name: Deploy to Crashlytics Beta
-        command: bundle exec fastlane deploy_to_crashlytics
+        command: bundle exec fastlane beta
