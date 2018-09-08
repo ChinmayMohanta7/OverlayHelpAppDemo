@@ -11,10 +11,10 @@ jobs:
       - run: echo "Mirkelam is working for you 👯"
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-      -run:
+      - run:
           name: added chmod permissions
           command: chmod +x ./gradlew
-      -run:
+      - run:
           name: Download Dependencies
           command: ./gradlew androidDependencies
       - save_cache:
