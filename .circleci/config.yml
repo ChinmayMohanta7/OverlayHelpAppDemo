@@ -12,24 +12,21 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: added chmod permissions
-          command: chmod +x ./gradlew
-      - run:
           name: Download Dependencies
-          command: ./gradlew androidDependencies
+          command: bash ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
-          command: ./gradlew lint test
+          command: bash ./gradlew lint test
       - store_test_results:
                 path: app/build/test-results
                 destination: test-results/
       - run:
           name: Initial build
-          command: ./gradlew clean assembleRelease --no-daemon --stacktrace
+          command: bash ./gradlew clean assembleRelease --no-daemon --stacktrace
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
