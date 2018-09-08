@@ -34,8 +34,12 @@ jobs:
           path: app/build/outputs/apk/
           destination: apks/
 
+   workflows:
+     version: 2
+     workflow:
+  jobs:
 
-     build-test-and-deploy:
+  -deploy_crashlytics:
   <<: *android_config
   steps:
     - checkout
