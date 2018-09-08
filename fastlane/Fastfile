@@ -8,7 +8,7 @@
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
-
+generated_fastfile_id "4af1d9a6-f7d3-4577-af1d-07b1c5629f71"
 default_platform(:android)
 
 platform :android do
@@ -42,6 +42,36 @@ platform :android do
       AVD_clean_after: false,
       gradle_task: "connectedDebugAndroidTest")
   end
+
+  lane :beta do
+    # build the release variant
+    build_android_app(task: "assembleRelease")
+
+    # upload to Beta by Crashlytics
+    crashlytics(
+      # api_token: "58b92c81fe22e3cdf80a5b16681467616a377ed4",
+      # build_secret: "4be5715b2a999108bf8bec198babd8fb01cafb0af08314d37c3b5b52bd901dc9"
+    )
+  end
+lane :beta do
+  # Adjust the `build_type` and `flavor` params as needed to build the right APK for your setup
+  gradle(
+    task: 'assemble',
+    build_type: 'Release'
+  )
+
+  # ...
+end
+
+lane :beta do
+  # ...
+  gradle(
+    task: 'assemble',
+    build_type: 'Release'
+  )
+  upload_to_play_store(track: 'beta')
+  # ...
+end
 
 
 end

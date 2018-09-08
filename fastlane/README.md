@@ -36,6 +36,11 @@ Run unit tests
 fastlane android instrumentation_tests
 ```
 Run instrumentation tests
+### android beta
+```
+fastlane android beta
+```
+
 
 ----
 
