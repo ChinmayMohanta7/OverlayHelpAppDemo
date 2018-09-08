@@ -12,7 +12,7 @@ jobs:
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       -run:
-          name: chmod permissions
+          name: added chmod permissions
           command: chmod +x ./gradlew
       -run:
           name: Download Dependencies
