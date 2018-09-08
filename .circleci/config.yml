@@ -26,9 +26,8 @@ jobs:
 
        - run:
           name: Gradle build (debug)
-          command: ./gradlew -PciBuild=true :mobile:assembleDebug :mobile:assembleAndroidTest
+          command: ./gradlew -PciBuild=true :mobile:assembleDebug 
 
       - store_artifacts:
           path: app/build/outputs/apk/debug/
           destination: artifact-file
-    end
