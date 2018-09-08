@@ -1,29 +1,3 @@
-Homepage
-Go to the profile of Faruk Cankaya
-Faruk Cankaya
-bike
-Oct 10, 2017
-Android Automated Build with Circle CI
-Continuous Integration(CI) and Continuous Deployment(CD) are essential parts of the software development cycle when things get complicated. I’ll talk about our situation and how we automated build process and what challenges I faced.
-
-Why did we need build automation?
-We develop two applications with little differences from same codebase which means we have many flavours such as ProductXDevelopmentRelease, ProductXProductionRelease, ProductYDevelopmentRelease, ProductYProductionRelease. We had to extract apk for each flavour and publish it for testing.
-Our team is consist of 1 front-end, 1 android, 1 ios and 1 backend developers. We started to review and test each others code.
-
-Who reviews whose code
-Each month turn is changed and developer who tests the Android mostly needs an application that has new developed feature. So, I have to build APK for each pull request and building an apk takes almost 10 minutes.
-
-We use JIRA as a task management system. I move the card from TODO stage to In progress stage when I started to develop a feature. When I complete the feature, I open a pull request on Github and I move the card from In progress to In Review. Code owner reviews the code and tests the application then s/he moves card to Reviewed stage manually. I need to build an apk and publish it on the fabric beta before moving card to In review stage. By the way, we apply git workflow represented here. Actually, I need to publish an apk for each feature. But it’s very long running process and generally I ship the bunch of features once.
-
-
-extract APK from Android Studio and upload it to fabric manually
-So, what I want:
-
-When I open I pull request for a feature branch from develop branch, development release APK should be published on fabric
-When I open pull request for a release branch, both development and production releases of APK should be published on fabric
-Circle CI is free Continuous Integration tool that works with multi platforms (frontend, backend, mobile). We use it for backend side and we decided to use it also for mobile side. It has easy configuration using single`yml` script and simple dashboard to manage environment variables, project settings, etc.
-
-You can build your application with sample configuration shown in here. Here is my configuration yml file:
 
 version: 2
 jobs:
@@ -35,7 +9,6 @@ jobs:
       JVM_OPTS: -Xmx4G
     steps:
       - checkout
-      - run: echo "Mirkelam is working for you 👯"
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
@@ -57,4 +30,3 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
-          
