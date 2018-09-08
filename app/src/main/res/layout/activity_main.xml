@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World! For those who are busy in sleeping and nt doing anything for others"
+        android:text="Hello World!"
         android:textColor="@android:color/holo_orange_dark"
         android:textSize="25sp"
         android:maxLines="2"
@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
         android:src="@drawable/tail_right"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.891"
         app:layout_constraintStart_toStartOf="parent"

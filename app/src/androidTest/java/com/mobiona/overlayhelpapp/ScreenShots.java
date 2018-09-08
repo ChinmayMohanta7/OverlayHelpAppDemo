@@ -9,6 +9,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import java.util.Date;
+
 import tools.fastlane.screengrab.Screengrab;
 import tools.fastlane.screengrab.locale.LocaleTestRule;
 
@@ -34,10 +36,10 @@ public class ScreenShots {
     }
     @Test
     public void clickButtonTest(){
-        Screengrab.screenshot("ButtonBefore");
+        Screengrab.screenshot(new Date().toString());
 
         Espresso.onView(withId(R.id.button)).perform(click());
 
-        Screengrab.screenshot("AfterButton");
+        Screengrab.screenshot(new Date().toString());
     }
 }
