@@ -10,7 +10,9 @@ jobs:
       - checkout
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
-
+      - run:
+          name: Download dependencies
+          command: ./gradlew androidDependencies
       - save_cache:
           paths:
             - ~/.gradle
@@ -21,9 +23,7 @@ jobs:
 
       - store_test_results:
           path: app/build/test-results
-       - run:
-          name: Download dependencies
-          command: ./gradlew androidDependencies
+
        - run:
           name: Gradle build (debug)
           command: ./gradlew -PciBuild=true :mobile:assembleDebug :mobile:assembleAndroidTest
