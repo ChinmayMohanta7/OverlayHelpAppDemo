@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 */
 
         final TextView textView=findViewById(R.id.textview);
-        textView.setText("Good Bye");
+        textView.setText("Good Morning");
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
