@@ -34,8 +34,9 @@ jobs:
           destination: apks/
 
 workflows:
- workflow:
  version: 2
+
+ workflow:
  jobs:
 
   deploy_crashlytics:
