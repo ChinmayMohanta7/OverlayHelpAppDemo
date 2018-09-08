@@ -35,8 +35,7 @@ jobs:
 
 workflows:
  version: 2
-
- workflow:
+ build-test-and-deploy:
  jobs:
 
   deploy_crashlytics:
