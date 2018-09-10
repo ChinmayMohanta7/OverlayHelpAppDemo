@@ -49,8 +49,10 @@ platform :android do
 
     # upload to Beta by Crashlytics
     crashlytics(
+      #  crashlytics_path: "./Pods/Crashlytics/"
       # api_token: "58b92c81fe22e3cdf80a5b16681467616a377ed4",
       # build_secret: "4be5715b2a999108bf8bec198babd8fb01cafb0af08314d37c3b5b52bd901dc9"
+      # ipa_path: "./app.ipa"
     )
   end
 
