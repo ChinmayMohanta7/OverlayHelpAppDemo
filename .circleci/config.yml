@@ -36,6 +36,9 @@ jobs:
           name: install fastlane
           command: gem install fastlane
       - run:
+          name: init fastlane
+          command: fastlane init
+      - run:
           name: bundle install fastlane
           command: bundle install
       - run:
@@ -43,7 +46,7 @@ jobs:
           command: gem install bundler
       - run:
           name: deploy to crashlytics
-          command: fastlane beta
+          command: bundle exec fastlane beta
       - run: echo "Mirkelam is working for you 👯"
 
 
