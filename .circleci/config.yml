@@ -36,7 +36,7 @@ jobs:
 
 deploy:
      machine:
-       enabled:true
+       enabled: true
        working_directory: ~/code
        environment: JVM_OPTS: -Xmx4G
        steps:
