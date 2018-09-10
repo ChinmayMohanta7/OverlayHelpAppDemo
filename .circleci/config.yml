@@ -36,18 +36,11 @@ jobs:
           name: install fastlane
           command: gem install fastlane
       - run:
-          name: init fastlane
-          command: fastlane init
-      - run:
           name: bundle install fastlane
           command: bundle install
       - run:
-          name: gem install
-          command: gem install bundler
-      - run:
-          name: psych install
-          command: gem install psych
-      - run:
+          override:
+            - chmod a+x gradlew
           name: deploy to crashlytics
           command: bundle exec fastlane beta
       - run: echo "Mirkelam is working for you 👯"
