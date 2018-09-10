@@ -38,7 +38,8 @@ deploy:
      machine:
        enabled: true
        working_directory: ~/code
-       environment: JVM_OPTS: -Xmx4G
+       environment:
+          JVM_OPTS: -Xmx4G
        steps:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
@@ -48,8 +49,8 @@ workflows:
  version: 2
    build_and_deploy:
    jobs:
-   -build
-   -deploy:
+   - build
+   - deploy:
      requies:
       -build
       filters:
