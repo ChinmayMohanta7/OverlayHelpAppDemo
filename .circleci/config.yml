@@ -41,31 +41,4 @@ jobs:
       - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
-      - run: echo "Mirkelam is working for you 👯"
-
-
-deploy:
-     machine:
-       enabled: true
-       working_directory: ~/code
-       environment:
-          JVM_OPTS: -Xmx4G
-       steps:
-        - run:
-          name: deploy to crashlytics
-          command: bundle exec fastlane beta
-        - run: echo "Checking install"
-
-
-workflows:
-  #version: 2
-   build_and_deploy:
-   jobs:
-   - build
-   - run: echo "Checking build"
-
-   - deploy:
-     requires:
-      filters:
-        branches:
-          only: master
+      - run: echo "I am working for you 👯"
