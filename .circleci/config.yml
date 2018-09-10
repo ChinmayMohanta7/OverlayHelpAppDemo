@@ -34,13 +34,10 @@ jobs:
           destination: apks/
       - run:
           name: install fastlane
-          command: gem install fastlane -NV
+          command: gem install fastlane 
       - run:
           name: bundle install fastlane
           command: bundle install
-      - run:
-          name: fastlane environment
-          command: fastlane env
       - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
