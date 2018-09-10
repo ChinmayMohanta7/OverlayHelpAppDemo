@@ -36,22 +36,14 @@ workflows:
  version: 2
  workflow:
  jobs:
- -build
- deploy_crashlytics:
- requires:
-   -build
-   filters:
-      branches:
-      only: master
+ docker:
+      - image: circleci/android:api-25-alpha deploy_crashlytics:
    <<: *android_config
-   steps:
-     - checkout
-     - *restore_gradle_cache
-     - *restore_gems_cache
-     - *ruby_dependencies
-     - *android_dependencies
-     - *save_gradle_cache
-     - *save_gems_cache
-     - run:
+      steps:
+        -run:
+        name: build apk
+        command: bash ./gradlew clean assembleRelease --no-daemon --stacktrace
+
+        - run:
          name: Deploy to Crashlytics Beta
          command: bundle exec fastlane beta
