@@ -43,7 +43,7 @@ jobs:
           command: gem install bundler
       - run:
           name: deploy to crashlytics
-          command: bundle exec fastlane deploy_to_crashlytics
+          command: fastlane beta
       - run: echo "Mirkelam is working for you 👯"
 
 
