@@ -32,38 +32,11 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
-   deploy:
-     machine:
-       enabled:true
-       working_directory: ~/code
-       environment: JVM_OPTS: -Xmx4G
-       steps:
-         -checkout
-         - run:
-                   name: "Optimize build.gradle for CI"
-                   command: sed -i 's/2g/1g/' app/build.gradle
-               # Install Fastlane
-               - run:
-                   name: Install Fastlane
-                   command: |
-                     gem install fastlane -NV
-               # Update Fastlane
-               - run:
-                   name: Bundle update
-                   command: bundle update
-          name: deploy to crashlytics
-          command: bundle exec fastlane beta
-
-
-workflows:
- version: 2
-   build-and-deploy:
-   jobs:
-   -build
-   -deploy:
-     requies:
-      -build
-      filters:
-        branches:
-          only: master
-
+       - run:
+          name: Install Fastlane
+          command: gem install fastlane -NV
+                      # Update Fastlane
+        - run:
+            name: Bundle update
+             command: bundle update
+  
