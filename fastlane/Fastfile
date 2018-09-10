@@ -45,7 +45,7 @@ platform :android do
 
   lane :beta do
     # build the release variant
-    build_android_app(task: "assembleRelease")
+    build_android_app(task: "assembleRelease -p")
 
     # upload to Beta by Crashlytics
     crashlytics(
