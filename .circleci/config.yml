@@ -6,7 +6,6 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx4G
-      - LANG: "en_US.UTF-8"
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
@@ -35,8 +34,7 @@ jobs:
        - run:
           name: Install Fastlane
           command: gem install fastlane -NV
-                      # Update Fastlane
+        
         - run:
             name: Bundle update
              command: bundle update
-  
