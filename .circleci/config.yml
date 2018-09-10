@@ -33,6 +33,9 @@ jobs:
           path: app/build/outputs/apk/
           destination: apks/
       - run:
+          name: install fastlane
+          command: gem install fastlane -NV
+      - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
       - run: echo "Mirkelam is working for you 👯"
