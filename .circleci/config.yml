@@ -35,7 +35,7 @@ jobs:
       - run:
           name: install fastlane
           command: gem install fastlane -NV
-      -run:
+      - run:
           name: bundle install fastlane
           command: bundle install
       - run:
