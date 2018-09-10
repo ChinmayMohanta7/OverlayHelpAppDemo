@@ -42,11 +42,7 @@ platform :android do
       AVD_clean_after: false,
       gradle_task: "connectedDebugAndroidTest")
   end
-  desc "Submit a new Beta Build to Crashlytics Beta"
-    lane :beta do
-      gradle(task: "assembleRelease")
-      crashlytics
-    end
+ 
   lane :beta do
     # build the release variant
     build_android_app(task: "assembleRelease")
