@@ -46,10 +46,9 @@ jobs:
 workflows:
  version: 2
    build-and-deploy:
+   jobs:
    -build
    -deploy:
      requies:
       -build
-      filters:
-       branches:
-         only: sequential-branch-filter
+
