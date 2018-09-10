@@ -45,11 +45,7 @@ platform :android do
 
   lane :beta do
     # build the release variant
-    gradle(
-      task: 'assemble',
-      build_type: 'Release'
-    )
-
+   
     # upload to Beta by Crashlytics
     crashlytics(
       # crashlytics_path: "./Pods/Crashlytics/
