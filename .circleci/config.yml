@@ -31,7 +31,5 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
-      -run
-          name: install fastlane
-          command: gem install fastlane -NV
+  
 
