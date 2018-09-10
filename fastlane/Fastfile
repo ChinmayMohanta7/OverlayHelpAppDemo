@@ -45,12 +45,11 @@ platform :android do
 
   lane :beta do
     # build the release variant
-    build_android_app(task: "assembleRelease")
+    build_android_app(task: "assembleDebug")
 
     # upload to Beta by Crashlytics
     crashlytics(
       # crashlytics_path: "./Pods/Crashlytics/
-      # apk_path: "./app/build/outputs/apk/red/beta/" + File.basename(Dir["./../app/build/outputs/apk/red/beta/app-red-beta*.apk"].first)
       # api_token: "58b92c81fe22e3cdf80a5b16681467616a377ed4",
       # build_secret: "4be5715b2a999108bf8bec198babd8fb01cafb0af08314d37c3b5b52bd901dc9"
       # ipa_path: "./app.ipa"
