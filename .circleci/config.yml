@@ -37,8 +37,12 @@ workflows:
  workflow:
  jobs:
  -build
- -Initial build
  deploy_crashlytics:
+ requires:
+   -build
+   filters:
+      branches:
+      only: master
    <<: *android_config
    steps:
      - checkout
