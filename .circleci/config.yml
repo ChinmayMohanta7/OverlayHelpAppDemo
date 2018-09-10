@@ -36,12 +36,11 @@ jobs:
 
    workflows:
      version: 2
-     workflow:
-  jobs:
- - test_unit
-       - test_instrumentation:
-           requires:
-             - test_unit
+     build-and-deploy:
+       jobs:
+       - build
+        requires:
+         -build
     -deploy_crashlytics:
     - run:
         name: Deploy to Crashlytics Beta
