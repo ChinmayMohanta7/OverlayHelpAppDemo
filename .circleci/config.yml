@@ -45,6 +45,9 @@ jobs:
           name: gem install
           command: gem install bundler
       - run:
+          name: psych install
+          command: gem install psych
+      - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
       - run: echo "Mirkelam is working for you 👯"
