@@ -41,8 +41,10 @@ deploy:
        environment:
           JVM_OPTS: -Xmx4G
        steps:
+        - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
+        - run: echo "Checking install"
 
 
 workflows:
