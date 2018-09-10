@@ -6,6 +6,7 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx4G
+      - LANG: "en_US.UTF-8"
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
@@ -38,7 +39,18 @@ jobs:
        environment: JVM_OPTS: -Xmx4G
        steps:
          -checkout
-         -run:
+         - run:
+                   name: "Optimize build.gradle for CI"
+                   command: sed -i 's/2g/1g/' app/build.gradle
+               # Install Fastlane
+               - run:
+                   name: Install Fastlane
+                   command: |
+                     gem install fastlane -NV
+               # Update Fastlane
+               - run:
+                   name: Bundle update
+                   command: bundle update
           name: deploy to crashlytics
           command: bundle exec fastlane beta
 
