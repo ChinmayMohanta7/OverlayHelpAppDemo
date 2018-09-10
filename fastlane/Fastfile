@@ -42,7 +42,7 @@ platform :android do
       AVD_clean_after: false,
       gradle_task: "connectedDebugAndroidTest")
   end
- 
+
   lane :beta do
     # build the release variant
     build_android_app(task: "assembleRelease")
