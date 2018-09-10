@@ -36,11 +36,8 @@ jobs:
           name: install fastlane
           command: gem install fastlane
       - run:
-          name: bundle install 
+          name: bundle install
           command: bundle install
-      - run:
-          name: install rail
-          command: gem install rails
       - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
