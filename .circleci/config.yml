@@ -32,8 +32,14 @@ jobs:
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
-     deploy:
-      machine:
+      - run:
+          name: deploy to crashlytics
+          command: bundle exec fastlane beta
+      - run: echo "Mirkelam is working for you 👯"
+
+
+deploy:
+     machine:
        enabled: true
        working_directory: ~/code
        environment:
