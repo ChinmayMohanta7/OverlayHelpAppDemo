@@ -33,7 +33,7 @@ jobs:
           path: app/build/outputs/apk/
           destination: apks/
      deploy:
-     machine:
+      machine:
        enabled: true
        working_directory: ~/code
        environment:
