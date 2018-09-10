@@ -34,6 +34,7 @@ jobs:
 
 workflows:
  version: 2
+ workflow:
  jobs:
  deploy_crashlytics:
    <<: *android_config
