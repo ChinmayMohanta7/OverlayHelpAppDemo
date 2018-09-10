@@ -34,7 +34,7 @@ jobs:
           destination: apks/
 
 
-deploy:
+  deploy:
      machine:
        enabled: true
        working_directory: ~/code
