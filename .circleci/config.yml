@@ -39,6 +39,9 @@ jobs:
           name: bundle install fastlane
           command: bundle install
       - run:
+          name: fastlane environment
+          command: fastlane env
+      - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
       - run: echo "Mirkelam is working for you 👯"
