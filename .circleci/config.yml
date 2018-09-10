@@ -51,4 +51,7 @@ workflows:
    -deploy:
      requies:
       -build
+      filters:
+        branches:
+          only: master
 
