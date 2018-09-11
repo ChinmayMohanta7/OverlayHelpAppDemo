@@ -41,11 +41,21 @@ Run unit tests
 fastlane android instrumentation_tests
 ```
 Run instrumentation tests
+### android instrumentation_tests_testlab
+```
+fastlane android instrumentation_tests_testlab
+```
+Run instrumentation tests in Firebase Test Lab
 ### android beta
 ```
 fastlane android beta
 ```
 
+### android deploy_to_play_store
+```
+fastlane android deploy_to_play_store
+```
+Deploy a new version to Google Play Store
 
 ----
 

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "618389042444",
+    "firebase_url": "https://overlayhelp.firebaseio.com",
+    "project_id": "overlayhelp",
+    "storage_bucket": "overlayhelp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:618389042444:android:e68d13c70529aeee",
+        "android_client_info": {
+          "package_name": "com.mobiona.OverlayHelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "618389042444-utafpsf243tqm619nbijb90htsr8d2lh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCUqSTmgbvKPjkS5YW61F44KtU5V5lRM44"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

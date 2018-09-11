@@ -52,7 +52,14 @@ platform :android do
       AVD_clean_after: false,
       gradle_task: "connectedDebugAndroidTest")
   end
-
+  desc "Run instrumentation tests in Firebase Test Lab"
+  lane :instrumentation_tests_testlab do
+   run_tests_firebase_testlab(
+    project_id: "overlayhelp",
+    model: "Nexus6P",
+    version: "27",
+    delete_firebase_files: true)
+  end
   lane :beta do
     # build the release variant
     build_android_app(task: "assemble", build_type: 'Release')
@@ -66,4 +73,10 @@ platform :android do
     )
   end
 
+  desc "Deploy a new version to Google Play Store"
+  lane :deploy_to_play_store do
+    @build_type = "Release"
+    assemble_build
+    upload_to_play_store
+  end
 end

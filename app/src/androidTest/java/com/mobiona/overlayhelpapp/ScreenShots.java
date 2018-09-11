@@ -27,18 +27,17 @@ public class ScreenShots {
 
     @Test
     public void testTakeScreenshot() {
-        Screengrab.screenshot("BeforeText");
+        //Screengrab.screenshot("BeforeText");
 
-        // Your custom onView...
         Espresso.onView(withId(R.id.textview)).perform(click());
-        Screengrab.screenshot("AfterText");
+        //Screengrab.screenshot("AfterText");
     }
     @Test
     public void clickButtonTest(){
-        Screengrab.screenshot("NoClick");
+        //Screengrab.screenshot("NoClick");
 
         Espresso.onView(withId(R.id.button)).perform(click());
 
-        Screengrab.screenshot("OnClicked");
+        //Screengrab.screenshot("OnClicked");
     }
 }
