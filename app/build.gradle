@@ -18,6 +18,20 @@ repositories {
     maven { url 'https://maven.fabric.io/public' }
 }
 android {
+    signingConfigs {
+        debug {
+            keyAlias 'circleci'
+            keyPassword 'password'
+            storeFile file('D:/OverlayHelpApp/keystore.jks')
+            storePassword 'password'
+        }
+        release {
+            keyAlias 'circleci'
+            keyPassword 'password'
+            storeFile file('D:/OverlayHelpApp/keystore.jks')
+            storePassword 'password'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.mobiona.overlayhelpapp"
@@ -36,7 +50,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
@@ -44,7 +58,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile 'com.github.instacart.truetime-android:library:2.1'
     androidTestCompile 'tools.fastlane:screengrab:1.0.0'
-    androidTestCompile'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:3.0.2'
     compile('com.crashlytics.sdk.android:crashlytics:2.9.5@aar') {
         transitive = true;
     }
