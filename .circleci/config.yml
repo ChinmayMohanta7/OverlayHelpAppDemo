@@ -16,7 +16,7 @@ jobs:
       - run:
           name: encode keystore
           command: base64 keystore.jks
-      
+
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
