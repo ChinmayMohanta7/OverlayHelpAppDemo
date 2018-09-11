@@ -22,14 +22,14 @@ android {
         debug {
             keyAlias 'circleci'
             keyPassword 'password'
-            storeFile file('../../keystore.jks')
+            storeFile file('../keystore.jks')
             storePassword 'password'
             v2SigningEnabled false
         }
         release {
             keyAlias 'circleci'
             keyPassword 'password'
-            storeFile file('../../keystore.jks')
+            storeFile file('../keystore.jks')
             storePassword 'password'
             v2SigningEnabled false
         }
