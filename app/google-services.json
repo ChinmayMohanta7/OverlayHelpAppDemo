@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:618389042444:android:e68d13c70529aeee",
+        "mobilesdk_app_id": "1:618389042444:android:40440f63b4c0a685",
         "android_client_info": {
-          "package_name": "com.mobiona.OverlayHelp"
+          "package_name": "com.mobiona.overlayhelpapp"
         }
       },
       "oauth_client": [
