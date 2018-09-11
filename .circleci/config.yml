@@ -15,10 +15,11 @@ jobs:
           command: echo 'export KEYSTORE=$(pwd)/keystore.jks' >> $BASH_ENV
       - run:
           name: encode keystore
-          command: base64 keystore.jks
+          command: openssl base64 -A -in .signing/release.jks
+
       - run:
           name: decode keystore
-          command: echo $RELEASE_KEYSTORE_BASE64 | base64 -d > .signing/keystore.jks
+          command: echo $RELEASE_KEYSTORE_BASE64 | base64 -d > .signing/release.jks
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
