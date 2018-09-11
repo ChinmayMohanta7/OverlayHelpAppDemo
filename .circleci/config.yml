@@ -15,11 +15,8 @@ jobs:
           command: echo 'export KEYSTORE=$(pwd)/keystore.jks' >> $BASH_ENV
       - run:
           name: encode keystore
-          command: openssl base64 -A -in .signing/release.jks
+          command: base64 keystore.jks
 
-      - run:
-          name: decode keystore
-          command: echo $RELEASE_KEYSTORE_BASE64 | base64 -d > .signing/release.jks
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
@@ -38,7 +35,7 @@ jobs:
                 destination: test-results/
       - run:
           name: Initial build
-          command: bash ./gradlew clean assembleRelease --no-daemon --stacktrace
+          command: bash ./gradlew assembleRelease --no-daemon --stacktrace
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
