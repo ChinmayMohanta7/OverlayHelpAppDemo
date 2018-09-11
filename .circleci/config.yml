@@ -7,12 +7,6 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx4G
-    dependencies:
-        cache_directories:
-            - ~/.android
-            - ~/android
-        override:
-            - ./install-dependencies.sh
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
@@ -22,9 +16,7 @@ jobs:
       - run:
           name: encode keystore
           command: base64 keystore.jks
-      - run:
-          name: Download keystore signing
-          command: bash ./misc/download_keystore.sh
+
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
@@ -43,7 +35,7 @@ jobs:
                 destination: test-results/
       - run:
           name: Initial build
-          command: bash ./gradlew clean assembleRelease --no-daemon --stacktrace
+          command: bash ./gradlew clean assembleRelease -PdisablePreDex --no-daemon --stacktrace
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
