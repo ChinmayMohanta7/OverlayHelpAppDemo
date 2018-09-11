@@ -22,7 +22,17 @@ platform :android do
   lane :assemble_test_application do |options|
     gradle(task: "assemble", build_type: "#{@build_type}AndroidTest")
   end
+  desc "Assemble Build"
+  lane :assemble_build do |options|
+    properties = {
+      "android.injected.signing.store.file" => "keystore.jks",
+      "android.injected.signing.store.password" => "password",
+      "android.injected.signing.key.alias" => "circleci",
+      "android.injected.signing.key.password" => "password",
+  } if @build_type == "Release"
 
+    gradle(task: "assemble", build_type: @build_type, properties: properties)
+  end
   desc "Assemble Build and Test Application"
   lane :assemble do |options|
     assemble_build options
