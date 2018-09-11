@@ -7,6 +7,12 @@ jobs:
       - image: circleci/android:api-25-alpha
     environment:
       JVM_OPTS: -Xmx4G
+    dependencies:
+        cache_directories:
+            - ~/.android
+            - ~/android
+        override:
+            - ./install-dependencies.sh
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
