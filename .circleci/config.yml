@@ -33,6 +33,9 @@ jobs:
           path: app/build/outputs/apk/
           destination: apks/
       - run:
+          name: give permission
+          command: chmod +x gradlew
+      - run:
           name: install fastlane
           command: gem install fastlane
       - run:
