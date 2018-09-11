@@ -32,6 +32,7 @@ android {
             storeFile file('../../keystore.jks')
             storePassword 'password'
             v2SigningEnabled false
+            signingConfig signingConfigs.release
         }
     }
     compileSdkVersion 27
