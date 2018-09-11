@@ -10,6 +10,9 @@ jobs:
     steps:
       - checkout
       - run: echo "Mirkelam is working for you 👯"
+      - run:
+          name: Download keystore signing
+          command: bash D:/OverlayHelpApp/keystore.jks
       - restore_cache:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
 
