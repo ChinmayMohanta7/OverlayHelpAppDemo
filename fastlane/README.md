@@ -21,6 +21,11 @@ or alternatively using `brew cask install fastlane`
 fastlane android assemble_test_application
 ```
 Assemble Test Application
+### android assemble_build
+```
+fastlane android assemble_build
+```
+Assemble Build
 ### android assemble
 ```
 fastlane android assemble

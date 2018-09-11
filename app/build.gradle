@@ -22,14 +22,16 @@ android {
         debug {
             keyAlias 'circleci'
             keyPassword 'password'
-            storeFile file('D:/OverlayHelpApp/keystore.jks')
+            storeFile file('../../keystore.jks')
             storePassword 'password'
+            v2SigningEnabled false
         }
         release {
             keyAlias 'circleci'
             keyPassword 'password'
-            storeFile file('D:/OverlayHelpApp/keystore.jks')
+            storeFile file('../../keystore.jks')
             storePassword 'password'
+            v2SigningEnabled false
         }
     }
     compileSdkVersion 27
