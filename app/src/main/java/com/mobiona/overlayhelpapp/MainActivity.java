@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         imageView.startAnimation(mAnimation);
 */
 
-        //final TextView textView=findViewById(R.id.textview);
+        final TextView textView=findViewById(R.id.textview);
         textView.setText("Hello");
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
