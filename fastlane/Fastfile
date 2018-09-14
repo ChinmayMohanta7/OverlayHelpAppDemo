@@ -81,7 +81,7 @@ platform :android do
   end
 
   desc "Parse Json"
-  lane : parse_json do
-      parse_json
+  lane :parse_json do
+        content = load_json(json_path: "overlayhelp-26725fad0732.json")
   end
 end
