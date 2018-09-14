@@ -9,7 +9,7 @@ jobs:
       JVM_OPTS: -Xmx4G
     steps:
       - checkout
-      - run: echo "Mirkelam is working for you 👯"
+      - run: echo "Mirkelam is working for you"
       - run:
           name: export KEYSTORE path
           command: echo 'export KEYSTORE=$(pwd)/keystore.jks' >> $BASH_ENV
@@ -51,4 +51,4 @@ jobs:
       - run:
           name: deploy to crashlytics
           command: bundle exec fastlane beta
-      
+
