@@ -69,7 +69,7 @@ jobs:
 
       - run:
           name: Decode Google Service account
-          command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/client-secret.json
+          command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
 
 
       - run:
