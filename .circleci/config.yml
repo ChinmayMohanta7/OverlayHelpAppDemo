@@ -67,9 +67,10 @@ jobs:
           name: Export Google Cloud Service key environment variable
           command: echo 'export GOOGLE_APPLICATION_CREDENTIALS="$GOOGLE_APPLICATION_CREDENTIALS"' >> $BASH_ENV
 
-      #- run:
-      #    name: Decode Google Service account
-      #    command: echo $GOOGLE_APPLICATION_CREDENTIALS | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+      - run:
+          name: Decode Google Service account
+          command: echo $GOOGLE_APPLICATION_CREDENTIALS | base64 -di > ${HOME}/gcloud-service-key.json
+
 
       - run:
           name: setGoogle Project
