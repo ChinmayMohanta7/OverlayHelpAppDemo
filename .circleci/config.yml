@@ -61,21 +61,22 @@ jobs:
       #    command: bundle exec fastlane assemble
       - run:
           name: Store Service Account
-          command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
+          command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/app/gcloud-service-key.json
       #export_gcloud_key: &export_gcloud_key
       - run:
           name: Export Google Cloud Service key environment variable
           command: echo 'export GCLOUD_SERVICE_KEY="$GCLOUD_SERVICE_KEY"' >> $BASH_ENV
 
-     # - run:
-      #    name: Decode Google Service account
-      #    command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
       - run:
-          name: Parse Json File
-          command: bundle exec fastlane parse_json
+          name: Decode Google Service account
+          command: echo $GCLOUD_SERVICE_KEY | base64 --decode > ~/${HOME}/app/gcloud-service-key.json
+
+     # - run:
+     #     name: Parse Json File
+      #    command: bundle exec fastlane parse_json
       - run:
           name: authorize Google
-          command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+          command: sudo gcloud auth activate-service-account --key-file=${HOME}/app/gcloud-service-key.json
 
       - run:
           name: setGoogle Project
