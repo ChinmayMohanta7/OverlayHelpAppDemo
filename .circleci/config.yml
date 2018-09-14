@@ -64,7 +64,8 @@ jobs:
           command: echo $GOOGLE_APPLICATION_CREDENTIALS	 > ${HOME}/gcloud-service-key.json
       - run:
           name: Decode Google Service account
-          command: echo $GOOGLE_APPLICATION_CREDENTIALS | base64 --decode > ${HOME}/gcloud-service-key.json
+          command: echo $GOOGLE_APPLICATION_CREDENTIALS | base64 --decode -i > ${HOME}/gcloud-service-key.json
+
       - run: |
           sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
           sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
