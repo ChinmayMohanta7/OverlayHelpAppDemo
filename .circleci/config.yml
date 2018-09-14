@@ -70,7 +70,9 @@ jobs:
      # - run:
       #    name: Decode Google Service account
       #    command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
-
+      - run:
+          name: Create auth
+          command: gcloud auth activate-service-account
 
       - run:
           name: setGoogle Project
