@@ -74,7 +74,7 @@ jobs:
       - run:
           name: setGoogle Project
           command: sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
-      -run:
+      - run:
          name: authorize Google
          command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
 
