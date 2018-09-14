@@ -67,13 +67,13 @@ jobs:
           name: Export Google Cloud Service key environment variable
           command: echo 'export GCLOUD_SERVICE_KEY="$GCLOUD_SERVICE_KEY"' >> $BASH_ENV
 
+      #- run:
+      #    name: Decode Google Service account
+       #   command: echo $GCLOUD_SERVICE_KEY | base64 --decode > ~/${HOME}/gcloud-service-key.json
       - run:
-          name: Decode Google Service account
-          command: echo $GCLOUD_SERVICE_KEY | base64 --decode > ~/${HOME}/gcloud-service-key.json
+          name: Decode Google Cloud credentials
+          command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
 
-     # - run:
-     #     name: Parse Json File
-      #    command: bundle exec fastlane parse_json
       - run:
           name: authorize Google
           command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
