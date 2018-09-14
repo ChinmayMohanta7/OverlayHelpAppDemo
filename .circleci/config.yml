@@ -73,16 +73,14 @@ jobs:
       - run:
           name: Decode Google Cloud credentials
           command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
-
-      - run:
-          name: authorize Google
-          command: sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com --key-file ${HOME}/gcloud-service-key.json
-          #command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-
       - run:
           name: setGoogle Project
           command: sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
 
+      - run:
+          name: authorize Google
+          command: sudo gcloud auth activate-service-account firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com --key-file ${HOME}/gcloud-service-key.json
+          #command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
 
       - run:
           name: Run UI Tests
