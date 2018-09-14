@@ -48,7 +48,14 @@ jobs:
       - run:
           name: bundle install
           command: bundle install
-      - run:
-          name: deploy to crashlytics
-          command: bundle exec fastlane beta
+      #- run:
+      #    name: deploy to crashlytics
+       #   command: bundle exec fastlane beta
 
+       #create_google_play_key: &create_google_play_key
+      - run:
+          name: Create Google Play key
+          command: echo $GOOGLE_PLAY_KEY > google-play-key.json
+      - run:
+          name: test with Firebase TestLab
+          command: bundle exec fastlane assemble
