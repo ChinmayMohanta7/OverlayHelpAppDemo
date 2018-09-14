@@ -53,9 +53,18 @@ jobs:
        #   command: bundle exec fastlane beta
 
        #create_google_play_key: &create_google_play_key
+      #- run:
+      #    name: Create Google Play key
+       #   command: echo $GOOGLE_PLAY_KEY > google-play-key.json
+     # - run:
+     #     name: test with Firebase TestLab
+      #    command: bundle exec fastlane assemble
       - run:
-          name: Create Google Play key
-          command: echo $GOOGLE_PLAY_KEY > google-play-key.json
-      - run:
-          name: test with Firebase TestLab
-          command: bundle exec fastlane assemble
+          name: Dump Google Cloud Credentials to file
+          command: echo ${GOOGLE_AUTH} > ${HOME}/gcp-key.json
+      - run: gcloud auth activate-service-account --key-file ${HOME}/gcp-key.json
+      - run: gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+       - run:
+          name: Run UI Tests
+          command: gcloud firebase test android run --type instrumentation --app ${APK_PATH} --test ${TEST_APK_PATH} --device model=Nexus6P,version=27,locale=en,orientation=portrait --timeout 30m
+                no_output_timeout: 30m

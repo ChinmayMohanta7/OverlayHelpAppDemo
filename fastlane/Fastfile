@@ -53,8 +53,7 @@ platform :android do
       gradle_task: "connectedDebugAndroidTest")
   end
   desc "Run instrumentation tests in Firebase Test Lab"
-  lane :instrumentation_tests_testlab do
-         build_android_app(task: "assemble", build_type: 'Release')
+  lane :firebase_test do
    run_tests_firebase_testlab(
     project_id: "overlayhelp",
     model: "Nexus6P",
