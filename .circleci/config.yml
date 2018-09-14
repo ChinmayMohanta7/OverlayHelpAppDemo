@@ -55,12 +55,12 @@ jobs:
       #    name: Decode Android key store
       #    command: echo $KEYSTORE | base64 -di | tee keystore.jks app/keystore.jks >/dev/null
       #create_google_play_key: &create_google_play_key
-      #- run:
-       #   name: Create Google Play key
-      #    command: echo $GOOGLE_PLAY_KEY > google-play-key.json
-      #- run:
-      #    name: test with Firebase TestLab
-      #    command: bundle exec fastlane assemble
+      - run:
+          name: Create Google Play key
+          command: echo $GOOGLE_PLAY_KEY > google-play-key.json
+      - run:
+          name: test with Firebase TestLab
+         command: bundle exec fastlane assemble
      # - run:
      #     name: Deploy to Play Store
       #    command: bundle exec fastlane deploy_to_play_store
