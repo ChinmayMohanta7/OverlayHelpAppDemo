@@ -61,7 +61,7 @@ jobs:
        #   command: echo $GOOGLE_PLAY_KEY > google-play-key.json
      - run:
          name: Upload to Firebase TestLab
-        command: |
+         command: |
               bundle exec fastlane add_plugin run_tests_firebase_testlab
               bundle exec fastlane firebase_test
       - run:
