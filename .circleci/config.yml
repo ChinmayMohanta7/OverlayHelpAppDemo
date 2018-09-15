@@ -40,8 +40,7 @@ jobs:
           name: Initial build
           command: |
                 bash ./gradlew clean assembleRelease --no-daemon --stacktrace
-                bash ./gradlew assembleDebugAndroidTest
-                bash ./gradlew assembleDebug
+                
       - store_artifacts:
           path: app/build/outputs/apk/
           destination: apks/
@@ -54,9 +53,9 @@ jobs:
       - run:
           name: bundle install
           command: bundle install
-      #- run:
-      #    name: deploy to crashlytics
-       #   command: bundle exec fastlane beta
+      - run:
+          name: deploy to crashlytics
+          command: bundle exec fastlane beta
 
        #create_google_play_key: &create_google_play_key
       #- run:
