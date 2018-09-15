@@ -56,21 +56,6 @@ fastlane android beta
 fastlane android deploy_to_play_store
 ```
 Deploy a new version to Google Play Store
-### android assemble_build_app
-```
-fastlane android assemble_build_app
-```
-Assemble Build
-### android assemble_test_app
-```
-fastlane android assemble_test_app
-```
-Assemble Test Application
-### android assemble_app
-```
-fastlane android assemble_app
-```
-Assemble Build and Test Application
 
 ----
 
