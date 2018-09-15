@@ -58,7 +58,7 @@ platform :android do
    run_tests_firebase_testlab(
     project_id: "overlayhelp",
     app_apk: "app/build/outputs/apk/release/app-release.apk",
-    android_test_apk: "app/build/outputs/apk/androidTest/app-debug-androidTest.apk"
+    android_test_apk: "app/build/outputs/apk/androidTest/app-debug-androidTest.apk",
     model: "Nexus6P",
     version: "27",
     delete_firebase_files: true)
