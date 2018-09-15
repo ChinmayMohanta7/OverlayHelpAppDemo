@@ -1,0 +1,36 @@
+[10:56:25]: [33mfastlane detected a Gemfile in the current directory[0m
+[10:56:25]: [33mhowever it seems like you don't use `bundle exec`[0m
+[10:56:25]: [33mto launch fastlane faster, please use[0m
+[10:56:25]: 
+[10:56:25]: [36m$ bundle exec fastlane add_plugin gem fastlane-plugin-run_tests_firebase_testlab, ~[0m
+[10:56:25]: 
+[10:56:25]: [33mGet started using a Gemfile for fastlane https://docs.fastlane.tools/getting-started/ios/setup/#use-a-gemfile[0m
+[10:56:25]: [31mWARNING: fastlane requires your locale to be set to UTF-8. To learn more go to https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables[0m
++---------------------------------------------+---------+-----------------------------+
+|                                    [32mUsed plugins[0m                                     |
++---------------------------------------------+---------+-----------------------------+
+| Plugin                                      | Version | Action                      |
++---------------------------------------------+---------+-----------------------------+
+| fastlane-plugin-automated_test_emulator_run | 1.6.0   | automated_test_emulator_run |
+| fastlane-plugin-run_tests_firebase_testlab  | 0.2.0   | run_tests_firebase_testlab  |
++---------------------------------------------+---------+-----------------------------+
+
+[10:56:35]: [33mSeems like the plugin is not available on RubyGems, what do you want to do?[0m
+
+Looking for related GitHub issues on fastlane/fastlane...
+
+➡️  [33m[!] Could not retrieve response as fastlane runs in non-interactive mode (FastlaneCore::Interface::FastlaneCrash)[0m
+    https://github.com/fastlane/fastlane/issues/12355 [[31mopen[0m] 9 💬
+    3 days ago
+
+➡️  [33mRun deliver without Deliverfile[0m
+    https://github.com/fastlane/fastlane/issues/13331 [[31mopen[0m] 0 💬
+    3 days ago
+
+➡️  [33mHow to make fastlane use http proxy?[0m
+    https://github.com/fastlane/fastlane/issues/12935 [[31mopen[0m] 3 💬
+    11 hours ago
+
+and 32 more at: https://github.com/fastlane/fastlane/search?q=Could%20not%20retrieve%20response%20as%20fastlane%20runs%20in%20non-interactive%20mode&type=Issues&utf8=✓
+
+[10:56:40]: [31mWARNING: fastlane requires your locale to be set to UTF-8. To learn more go to https://docs.fastlane.tools/getting-started/ios/setup/#set-up-environment-variables[0m

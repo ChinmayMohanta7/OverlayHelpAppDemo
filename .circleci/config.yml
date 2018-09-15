@@ -66,7 +66,7 @@ jobs:
           name: Upload to Firebase TestLab
           command: |
                 bundle exec fastlane add_plugin run_tests_firebase_testlab
-                bundle exec faslane firebase_test
+                bundle exec fastlane firebase_test
       - run:
           name: Store Service Account
           command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
