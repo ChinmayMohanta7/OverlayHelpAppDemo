@@ -86,7 +86,9 @@ jobs:
        #   name: authorize Google
        #   command: gcloud auth activate-service-account firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com --key-file=${HOME}/gcloud-service-key.json
           #command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
-
+      - run:
+          name: Login to Account
+          command: gcloud auth login firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com
       - run:
           name: Run UI Tests
           command: sudo gcloud firebase test android run
