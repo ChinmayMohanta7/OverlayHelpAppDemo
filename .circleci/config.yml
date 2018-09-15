@@ -65,7 +65,7 @@ jobs:
       - run:
           name: Upload to Firebase TestLab
           command: |
-                fastlane add_plugin firebase_test
+                bundle exec fastlane add_plugin run_tests_firebase_testlab
                 bundle exec faslane firebase_test
       - run:
           name: Store Service Account
