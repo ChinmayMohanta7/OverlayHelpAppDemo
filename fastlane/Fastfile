@@ -54,6 +54,7 @@ platform :android do
   end
   desc "Run instrumentation tests in Firebase Test Lab"
   lane :firebase_test do
+   build_android_app(task: "assemble", build_type: 'Release')
    run_tests_firebase_testlab(
     project_id: "overlayhelp",
     model: "Nexus6P",

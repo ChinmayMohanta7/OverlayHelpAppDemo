@@ -63,6 +63,9 @@ jobs:
      #     name: test with Firebase TestLab
       #    command: bundle exec fastlane assemble
       - run:
+          name: Upload to Firebase TestLab
+          command: bundle exec faslane firebase_test
+      - run:
           name: Store Service Account
           command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
       #export_gcloud_key: &export_gcloud_key
