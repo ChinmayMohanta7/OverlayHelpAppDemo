@@ -59,11 +59,11 @@ jobs:
       #- run:
       #    name: Create Google Play key
        #   command: echo $GOOGLE_PLAY_KEY > google-play-key.json
-     #- run:
-      #    name: Upload to Firebase TestLab
-       #   command: |
-        #        bundle exec fastlane add_plugin run_tests_firebase_testlab
-         #       bundle exec fastlane firebase_test
+     - run:
+         name: Upload to Firebase TestLab
+        command: |
+              bundle exec fastlane add_plugin run_tests_firebase_testlab
+              bundle exec fastlane firebase_test
       - run:
           name: Store Service Account
           command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
@@ -92,8 +92,6 @@ jobs:
       - run:
           name: Run UI Tests
           command: sudo gcloud firebase test android run
-                        --app app/build/outputs/apk/release/app-release.apk
-                        --test app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk
                         --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
           #command: gcloud firebase test android run --type instrumentation --app ${APK_PATH} --test ${TEST_APK_PATH} --device model=Nexus6P,version=27,locale=en,orientation=portrait --timeout 30m
           no_output_timeout: 30m
