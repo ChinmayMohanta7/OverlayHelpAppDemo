@@ -75,9 +75,9 @@ jobs:
       #- run:
       #    name: Decode Google Service account
        #   command: echo $GCLOUD_SERVICE_KEY | base64 --decode > ~/${HOME}/gcloud-service-key.json
-      - run:
-          name: Decode Google Cloud credentials
-          command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
+      #- run:
+       #   name: Decode Google Cloud credentials
+        #  command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
       - run:
           name: set Project
           command: sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
