@@ -67,13 +67,13 @@ jobs:
           command: |
               bundle exec fastlane add_plugin run_tests_firebase_testlab
               bundle exec fastlane firebase_test
-      - run:
-          name: Store Service Account
-          command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
+     # - run:
+      #    name: Store Service Account
+      #    command: echo $GCLOUD_SERVICE_KEY	 > ${HOME}/gcloud-service-key.json
       #export_gcloud_key: &export_gcloud_key
-      - run:
-          name: Export Google Cloud Service key environment variable
-          command: echo 'export GCLOUD_SERVICE_KEY="$GCLOUD_SERVICE_KEY"' >> $BASH_ENV
+     # - run:
+      #    name: Export Google Cloud Service key environment variable
+      #    command: echo 'export GCLOUD_SERVICE_KEY="$GCLOUD_SERVICE_KEY"' >> $BASH_ENV
 
       #- run:
       #    name: Decode Google Service account
@@ -81,20 +81,20 @@ jobs:
       #- run:
        #   name: Decode Google Cloud credentials
         #  command: echo $GCLOUD_SERVICE_KEY | base64 -di > ${HOME}/gcloud-service-key.json
-      - run:
-          name: set Project
-          command: sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
+      #- run:
+      #    name: set Project
+       #   command: sudo gcloud --quiet config set project ${GOOGLE_PROJECT_ID}
 
-      - run:
-          name: authorize Google
-          command: gcloud auth activate-service-account firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com --key-file=${HOME}/gcloud-service-key.json
+      #- run:
+      #    name: authorize Google
+      #    command: gcloud auth activate-service-account firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com --key-file=${HOME}/gcloud-service-key.json
           #command: sudo gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
       #- run:
        #   name: Login to Account
       #    command: gcloud auth login firebase-adminsdk-grt4v@overlayhelp.iam.gserviceaccount.com
-      - run:
-          name: Run UI Tests
-          command: sudo gcloud firebase test android run
-                        --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
+     # - run:
+     #     name: Run UI Tests
+      #    command: sudo gcloud firebase test android run
+       #                 --results-bucket cloud-test-${GOOGLE_PROJECT_ID}
           #command: gcloud firebase test android run --type instrumentation --app ${APK_PATH} --test ${TEST_APK_PATH} --device model=Nexus6P,version=27,locale=en,orientation=portrait --timeout 30m
-          no_output_timeout: 30m
+        #  no_output_timeout: 30m
