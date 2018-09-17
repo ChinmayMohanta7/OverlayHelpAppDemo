@@ -57,7 +57,7 @@ platform :android do
    build_android_app(task: "assemble", build_type: 'Release')
    run_tests_firebase_testlab(
     project_id: "overlayhelp",
-    model: "Nexus6P","Nexus5X"
+    model: "Nexus5X"
     version: "27",
     delete_firebase_files: true)
   end
