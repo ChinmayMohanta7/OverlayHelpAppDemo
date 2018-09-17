@@ -32,9 +32,10 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Run Tests
-          command:
-                bash ./gradlew lint test
-                bash ./gradlew test
+          command: bash ./gradlew lint test
+      - run:
+          name: Run Unit Test
+          command: ./gradlew test
       - store_test_results:
                 path: app/build/test-results
                 destination: test-results/
