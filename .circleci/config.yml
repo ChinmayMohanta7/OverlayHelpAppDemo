@@ -35,7 +35,7 @@ jobs:
           command: bash ./gradlew lint test
       - run:
           name: Run Unit Test
-          command: ./gradlew test
+          command: bash ./gradlew test
       - store_test_results:
                 path: app/build/test-results
                 destination: test-results/
