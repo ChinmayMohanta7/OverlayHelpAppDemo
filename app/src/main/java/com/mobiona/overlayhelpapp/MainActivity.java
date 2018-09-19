@@ -50,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                startActivity(new Intent(MainActivity.this,LoginActivity.class));
-                textView.setText("Button Clicked");
+                startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                //textView.setText("Button Clicked");
             }
         });
     }
